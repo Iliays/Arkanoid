@@ -75,6 +75,7 @@ MonoBehaviour:
   _materials:
   - {fileID: 2100000, guid: 758ea1a95c985b045a79143e4763a396, type: 2}
   _effect: {fileID: 8956466729922350583}
+  _bonus: {fileID: 6330827357231726538, guid: 402315e24762c074a96f42268be08e0a, type: 3}
 --- !u!82 &7101135935306434167
 AudioSource:
   m_ObjectHideFlags: 0

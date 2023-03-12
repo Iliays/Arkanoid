@@ -11,7 +11,8 @@ public class Destroyer : MonoBehaviour
 		{
 			_player.ApplyDamage();
 			_playerMover.BallCreate();
-			Destroy(other.attachedRigidbody.gameObject);
 		}
+
+		Destroy(other.attachedRigidbody.gameObject);
 	}
 }

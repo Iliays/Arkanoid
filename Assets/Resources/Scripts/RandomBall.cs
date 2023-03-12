@@ -10,7 +10,7 @@ public class RandomBall : MonoBehaviour
 	{
 		_rigidbody = GetComponent<Rigidbody>();
 		_ballSpeedController.enabled = true;
-		_rigidbody.velocity = new Vector3(15f, 15f);
+		_rigidbody.velocity = new Vector3(Random.Range(15f, 20f), Random.Range(15f, 20f));
 	}
 
 	private void OnCollisionEnter(Collision collision)

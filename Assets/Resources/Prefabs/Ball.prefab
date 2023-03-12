@@ -183,6 +183,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 0}
+  BallMover: {fileID: 8879807499754682320}
 --- !u!96 &1468813764
 TrailRenderer:
   serializedVersion: 3
@@ -311,6 +312,7 @@ MonoBehaviour:
   _randomBall: {fileID: -1950333165138243047, guid: 391c78e2e64102542bb0f55f314fe0d0,
     type: 3}
   _ballSpeedController: {fileID: 173333876040362412}
+  _rigidbody: {fileID: 1061918060020676356}
 --- !u!114 &3044292518137505237
 MonoBehaviour:
   m_ObjectHideFlags: 0

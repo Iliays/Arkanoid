@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(AudioSource))]
 public class Block : MonoBehaviour
@@ -9,9 +10,12 @@ public class Block : MonoBehaviour
 	[SerializeField] private Renderer _renderer;
 	[SerializeField] private List<Material> _materials = new();
 	[SerializeField] private ParticleSystem _effect;
+	[SerializeField] private GameObject _bonus;
 
 	private	AudioSource _audioSource;
 	private Renderer _effectRenderer;
+
+	public static event UnityAction<Block> OnDie;
 
 	private void Start()
 	{
@@ -39,7 +43,10 @@ public class Block : MonoBehaviour
 		}
 		else
 		{
-
+			if (5 >= UnityEngine.Random.Range(1, 100))
+			{
+				Instantiate(_bonus, transform.position, Quaternion.identity);
+			}
 			Invoke(nameof(Diactivate), 0.3f);
 		}
 
@@ -48,6 +55,7 @@ public class Block : MonoBehaviour
 
 	private void Diactivate()
 	{
+		OnDie?.Invoke(this);
 		gameObject.SetActive(false);
 	}
 

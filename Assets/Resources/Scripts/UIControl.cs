@@ -8,17 +8,20 @@ public class UIControl : MonoBehaviour
 {
 	[SerializeField] private TextMeshProUGUI _textHealth;
 	[SerializeField] private GameObject _losePanel;
+	[SerializeField] private GameObject _winPanel;
 
 	private void OnEnable()
 	{
 		Player.OnHealthChange += TextChange;
 		Player.OnHealthChange += LosePanel;
+		Win.OnWin += WinPanel;
 	}
 
 	private void OnDisable()
 	{
 		Player.OnHealthChange -= TextChange;
 		Player.OnHealthChange -= LosePanel;
+		Win.OnWin -= WinPanel;
 	}
 
 	private void TextChange(int health)
@@ -32,6 +35,15 @@ public class UIControl : MonoBehaviour
 		{
 			Time.timeScale = 0;
 			_losePanel.SetActive(true);
+		}
+	}
+
+	private void WinPanel(bool isWin)
+	{
+		if (isWin)
+		{
+			Time.timeScale = 0;
+			_winPanel.SetActive(isWin);
 		}
 	}
 

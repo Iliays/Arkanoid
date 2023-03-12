@@ -6,6 +6,8 @@ public class BallControl : MonoBehaviour
 	private BallMover _ballMover;
 	[SerializeField] private Transform _target;
 
+	public BallMover BallMover;
+
 	private void Start()
 	{
 		_ballMover = GetComponent<BallMover>();

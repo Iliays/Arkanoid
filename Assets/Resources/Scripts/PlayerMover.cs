@@ -39,4 +39,9 @@ public class PlayerMover : MonoBehaviour
 			Instantiate(_ball, _target.position, Quaternion.identity);
 		}
 	}
+
+	public void BonusMultiBalls()
+	{
+		_ball.BallMover.MultiBalls();
+	}
 }
